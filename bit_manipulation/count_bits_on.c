@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdint.h>
 
+uint8_t count_bits_on_loop( uint32_t number );
+uint32_t count_bits_on_kernighan( uint32_t number );
+uint32_t count_bits_on_lookup_table( uint32_t number );
+
 uint8_t count_bits_on_loop( uint32_t number )
 {
     const uint32_t bits_len = 32;
