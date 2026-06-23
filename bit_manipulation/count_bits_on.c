@@ -94,7 +94,7 @@ int main( void )
 
     //res = count_bits_on_effective(6);     // should return 2
 
-    res = count_bits_on_lookup_table(12);  // should return 2
+    res = count_bits_on_lookup_table(12);   // should return 2
 
     printf("Number of bits: %u", res);
 }
