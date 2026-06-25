@@ -41,6 +41,15 @@ bool check_bit_is_set( uint32_t number, uint32_t position )
     return false;
 }
 
+bool check_bit_is_off( uint32_t number, uint32_t position )
+{
+    if ( (number & (1U<<position)) == 0 )
+    {
+        return true;
+    }
+    return false;
+}
+
 int main( void )
 {
     uint32_t result;
@@ -65,6 +74,16 @@ int main( void )
     else
     {
         printf("Bit 2 in number 20 is OFF.\n");
+    }
+
+    // 101
+    if ( check_bit_is_off(5, 1) == true )
+    {
+        printf("Bit 1 in number 5 is OFF.\n");
+    }
+    else
+    {
+        printf("Bit 1 in number 5 is ON.\n");
     }
 
     return 0;
