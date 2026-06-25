@@ -50,6 +50,28 @@ bool check_bit_is_off( uint32_t number, uint32_t position )
     return false;
 }
 
+uint32_t shift_left_by_n( uint32_t number, uint32_t n )
+{
+    number = (number << n);
+    return number;
+}
+
+uint32_t shift_right_by_n( uint32_t number, uint32_t n )
+{
+    number = (number >> n);
+    return number;
+}
+
+uint32_t multiply_by_2( uint32_t number )
+{
+    return shift_left_by_n( number , 1);
+}
+
+uint32_t divide_by_2( uint32_t number )
+{
+    return shift_right_by_n( number , 1);
+}
+
 int main( void )
 {
     uint32_t result;
@@ -85,6 +107,12 @@ int main( void )
     {
         printf("Bit 1 in number 5 is ON.\n");
     }
+
+    result = multiply_by_2(6);
+    printf("Multiply 6x2 = %u\n", result);
+
+    result = divide_by_2(8);
+    printf("Devide 8/2 = %u\n", result);
 
     return 0;
 }
