@@ -5,8 +5,8 @@
 uint8_t count_bits_on_loop( uint32_t number );
 uint32_t count_bits_on_kernighan( uint32_t number );
 uint32_t count_bits_on_lookup_table( uint32_t number );
-bool is_one_bit_set( uint32_t number );
-bool is_one_bit_set_substraction( uint32_t number );
+bool is_single_bit_set( uint32_t number );
+bool is_single_bit_set_subtraction( uint32_t number );
 
 uint8_t count_bits_on_loop( uint32_t number )
 {
@@ -89,7 +89,8 @@ uint32_t count_bits_on_lookup_table( uint32_t number )
     return counter;
 }
 
-// trivial solution to check if only 1 bit is on
+// trivial solution to check if only 1 bit is on:
+// equivalent to checking if the number is a power of two
 bool is_single_bit_set( uint32_t number )
 {
     const uint32_t num_len = 32;
@@ -149,7 +150,7 @@ int main( void )
 
     if ( single_bit_on )
     {
-        printf("The number have only one bit ON.\n");
+        printf("The number has only one bit ON.\n");
     }
     else
     {
