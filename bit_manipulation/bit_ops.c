@@ -72,6 +72,30 @@ uint32_t divide_by_2( uint32_t number )
     return shift_right_by_n( number , 1);
 }
 
+uint32_t reverse_bits( uint32_t number )
+{
+    const uint32_t bit_len = 32;
+    uint32_t reversed_num = 0;
+
+    for (uint32_t i=0; i<bit_len; i++)
+    {
+        reversed_num = reversed_num | ( (number & 1U) << (bit_len-i-1) );
+        number = number >> 1;
+    }
+    return reversed_num;
+}
+
+uint32_t calculate_power( uint32_t base, uint32_t power )
+{
+    uint32_t result = 1;
+
+    for (uint32_t i=0; i<power; i++)
+    {
+        result = result*base;
+    }
+    return result;
+}
+
 int main( void )
 {
     uint32_t result;
@@ -113,6 +137,14 @@ int main( void )
 
     result = divide_by_2(8);
     printf("Devide 8/2 = %u\n", result);
+
+    // 0000 0000 0000 0000 0000 0000 0000 0001
+    // 1000 0000 0000 0000 0000 0000 0000 0000
+    result = reverse_bits(1);
+    printf("The reverse number of 1 is: %u\n", result);
+
+    result = calculate_power(3, 2);
+    printf("3^2 = %u\n", result);
 
     return 0;
 }
